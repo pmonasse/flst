@@ -310,14 +310,12 @@ static void create_tree(Cimage im, LsTree& tree, LsShape& root,
     std::vector<Edgel> children;
     find_children(im, tree, root, children);
 
-    int iPixels = root.area;
     std::vector<Edgel>::const_iterator it = children.begin();
     for(; it != children.end(); ++it) {
         LsShape* child = add_child(tree, root);
-        child->pixels = root.pixels + iPixels;
+        child->pixels = root.pixels + root.area;
         create_tree(im, tree, *child, *it, root.gray);
         root.area += child->area;
-        iPixels += child->area;
     }
 }
 
