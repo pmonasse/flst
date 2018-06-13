@@ -10,17 +10,18 @@ struct LsPoint {
 
 /// Structure for a shape (connected component of level set with filled holes)
 struct LsShape {
-    typedef enum {INF, SUP} Type;
+    typedef bool Type; // Better than enum for memory usage
+    static const Type INF=false, SUP=true;
 
     Type type; ///< Inf or sup level set
     unsigned char gray; ///< Gray level of the level set
     bool bIgnore; ///< Should the shape be ignored?
     bool bBoundary; ///< Does the shape meets the border of the image?
 
+    int area; ///< Number of pixels in the shape
     LsPoint* pixels; ///< Array of pixels in shape
     std::vector<LsPoint> contour; ///< Level line
 
-    int area; ///< Number of pixels in the shape
 
     // Tree structure
     LsShape* parent;  ///< Smallest containing shape
