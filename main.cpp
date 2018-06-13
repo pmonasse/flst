@@ -17,20 +17,22 @@ int main(int argc, char* argv[]) {
     display(im);
 
     LsTree tree(im.data(), im.width(), im.height());
+    std::cout << "Shapes: " << tree.iNbShapes << std::endl;
 
     int x, y;
     while(getMouse(x,y)==1) {
         LsShape* s = tree.smallest_shape(x,y);
         std::cout << s->area << std::endl;
-        std::vector<LsPoint>::iterator it, end=s->contour.end();
         noRefreshBegin();
         display(im);
+#if BOUNDARY
+        std::vector<LsPoint>::iterator it, end=s->contour.end();
         for(it=s->contour.begin(); it!=end; ++it)
             drawPoint(it->x, it->y, RED);
+#endif
         noRefreshEnd();
     }
 
     endGraphics();
     return 0;
 }
-

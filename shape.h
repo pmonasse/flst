@@ -20,8 +20,9 @@ struct LsShape {
 
     int area; ///< Number of pixels in the shape
     LsPoint* pixels; ///< Array of pixels in shape
+#ifdef BOUNDARY
     std::vector<LsPoint> contour; ///< Level line
-
+#endif
 
     // Tree structure
     LsShape* parent;  ///< Smallest containing shape

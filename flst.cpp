@@ -193,10 +193,12 @@ static void init_shape(Cimage im, LsTree& tree,
 
     Edgel cur = e;
     do {
-        int j = cur.pt.y * im->ncol + cur.pt.x;
-        unsigned char v = im->gray[j];
+#ifdef BOUNDARY
         if(cur.dir < DIAGONAL)
             s.contour.push_back(cur.origin());
+#endif
+        int j = cur.pt.y * im->ncol + cur.pt.x;
+        unsigned char v = im->gray[j];
         if(! COMPARE(s.type, v, s.gray)) {
             s.gray = v;
             s.pixels[0] = cur.pt;
@@ -267,8 +269,8 @@ static bool add_neighbor(Cimage im, LsTree& tree, LsShape& s, Edgel e,
 
 /// Fill the private area of shape \a s and find its children.
 /// Put in \a children one seed edgel per child.
-static void find_children(Cimage im, LsTree& tree, LsShape& s,
-                          std::vector<Edgel>& children) {
+static void find_pp_children(Cimage im, LsTree& tree, LsShape& s,
+                             std::vector<Edgel>& children) {
     for(int i = 0; i < s.area; i++) {
         const LsPoint& pt = s.pixels[i];
         assert(tree.smallestShape[pt.y*im->ncol+pt.x] == &s);
@@ -308,7 +310,7 @@ static void create_tree(Cimage im, LsTree& tree, LsShape& root,
     init_shape(im, tree, root, e, level);
 
     std::vector<Edgel> children;
-    find_children(im, tree, root, children);
+    find_pp_children(im, tree, root, children);
 
     std::vector<Edgel>::const_iterator it = children.begin();
     for(; it != children.end(); ++it) {

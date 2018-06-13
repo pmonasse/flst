@@ -11,6 +11,11 @@ add_library(Shape
             shape.h shape.cpp
             tree.h tree.cpp)
 
+option(Boundary "Store boundary of shapes" ON)
+if(${Boundary})
+  add_definitions(-DBOUNDARY)
+endif()
+
 add_executable(boundaries main.cpp)
 ImagineUseModules(boundaries Images)
 target_link_libraries(boundaries Shape)
