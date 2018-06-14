@@ -5,6 +5,7 @@
 
 /// Tree of shapes.
 struct LsTree {
+    LsTree() {} //For use with old FLST only
     LsTree(const unsigned char* gray, int w, int h);
     ~LsTree();
 
