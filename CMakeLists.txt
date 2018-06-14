@@ -1,10 +1,4 @@
 cmake_minimum_required(VERSION 2.6)
-file(TO_CMAKE_PATH "$ENV{IMAGINEPP_ROOT}/CMake" p)
-list(APPEND CMAKE_MODULE_PATH "${p}") #For old Imagine++
-list(APPEND CMAKE_SYSTEM_FRAMEWORK_PATH /Library/Frameworks) #Mac, why not auto?
-find_package(Imagine REQUIRED)
-
-project(Boundaries)
 
 add_library(Shape
             flst.cpp
@@ -12,10 +6,17 @@ add_library(Shape
             tree.h tree.cpp)
 
 option(Boundary "Store boundary of shapes" ON)
-if(${Boundary})
+if(Boundary)
   add_definitions(-DBOUNDARY)
 endif()
 
-add_executable(boundaries main.cpp)
-ImagineUseModules(boundaries Images)
-target_link_libraries(boundaries Shape)
+add_subdirectory(libImage)
+add_executable(test test.cpp)
+target_link_libraries(test image Shape)
+
+find_package(Imagine)
+if(Imagine_FOUND)
+  add_executable(boundaries main.cpp)
+  ImagineUseModules(boundaries Images)
+  target_link_libraries(boundaries Shape)
+endif()
