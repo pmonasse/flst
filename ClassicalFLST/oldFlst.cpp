@@ -1,4 +1,25 @@
-/* Fast Level Sets Transform of an image and associated functions */
+/**
+ * SPDX-License-Identifier: MPL-2.0+
+ * @file oldFlst.cpp
+ * @brief Tree extraction by the classical FLST. Sorry, ugly code...
+ * @author Pascal Monasse <monasse@imagine.enpc.fr>
+ *
+ * Copyright (c) 1998-2018 Pascal Monasse
+ * All rights reserved.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the Mozilla Public License as
+ * published by the Mozilla Foundation, either version 2.0 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * Mozilla Public License for more details.
+ *
+ * You should have received a copy of the Mozilla Public License
+ * along with this program. If not, see <https://www.mozilla.org/en-US/MPL/2.0/>
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -199,9 +220,9 @@ unsigned char flst_largest_neighbor(struct FlstNeighborhood* pNeighborhood)
   return pNeighborhood->cMaxGrayLevel;
 }
 
-/* --------------------------------------------------------------------------------------
-   --------- Allocations of structures used in the algorithm ----------------------------
-   -------------------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------------------
+   --------- Allocations of structures used in the algorithm -------------------
+   -------------------------------------------------------------------------- */
 
 /* Allocate the image of the tags for the visited pixels and the visited neighbor pixels.
    Do not be afraid about the parameter: it is simply a pointer to a 2-D array representing
@@ -451,9 +472,9 @@ void init_patterns()
   }
 }
 
-/* --------------------------------------------------------------------------------------
-   --------- The algorithm itself, based on growing regions containing an extremum ------
-   -------------------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------------------
+   --- The algorithm itself, based on growing regions containing an extremum ---
+   -------------------------------------------------------------------------- */
 
 /* Indicates if the pixel at position (x, y) is a local minimum in the image */
 char is_local_min(unsigned char** ou, short int x, short int y, char bFlagHeightConnectedness)
