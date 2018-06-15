@@ -21,9 +21,9 @@
  * along with this program. If not, see <https://www.mozilla.org/en-US/MPL/2.0/>
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <map> //STL
 #include <assert.h>
 #include "oldFlst.h"
