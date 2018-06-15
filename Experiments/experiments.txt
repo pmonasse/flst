@@ -1,0 +1,450 @@
+meteo:
+https://upload.wikimedia.org/wikipedia/commons/6/6b/02S_Dec_8_2011_0600Z.jpg
+
+convert ~/02S_Dec_8_2011_0600Z.jpg -gravity Center -extent 1000x1000 im.png
+/usr/bin/time ./test im.png
+Shapes: 10758 Mem: 8MB TV: 489224
+0.20
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 11113 Mem: 8MB TV: 489224
+0.82
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 1414x1414 im.png
+Shapes: 75251 Mem: 18MB TV: 3232390
+0.45
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 77684 Mem: 18MB TV: 3232390
+1.75
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 1732x1732 im.png
+/usr/bin/time ./test im.png
+Shapes: 215256 Mem: 31MB TV: 9606691
+0.84
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 219960 Mem: 31MB TV: 9606691
+4.15
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 2000x2000 im.png
+/usr/bin/time ./test im.png
+Shapes: 418701 Mem: 46MB TV: 19885958
+1.39
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 425558 Mem: 46MB TV: 19885958
+6.95
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 2236x2236 im.png
+/usr/bin/time ./test im.png
+Shapes: 649021 Mem: 62MB TV: 31648377
+1.97
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 656984 Mem: 63MB TV: 31648377
+10.76
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 2449x2449 im.png
+/usr/bin/time ./test im.png
+Shapes: 886306 Mem: 79MB TV: 43822522
+2.57
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 894685 Mem: 79MB TV: 43822522
+13.92
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 2646x2646 im.png
+/usr/bin/time ./test im.png
+Shapes: 1141667 Mem: 96MB TV: 57513426
+3.24
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 1151346 Mem: 97MB TV: 57513426
+17.62
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 2828x2828 im.png
+/usr/bin/time ./test im.png
+Shapes: 1399490 Mem: 114MB TV: 71556166
+3.90
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 1409805 Mem: 114MB TV: 71556166
+21.24
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 3000x3000 im.png
+/usr/bin/time ./test im.png
+Shapes: 1658150 Mem: 131MB TV: 85897543
+4.54
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 1669712 Mem: 132MB TV: 85897543
+24.17
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 3162x3162 im.png
+/usr/bin/time ./test im.png
+Shapes: 1926981 Mem: 149MB TV: 100816587
+5.24
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 1937979 Mem: 150MB TV: 100816587
+28.77
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 3317x3317 im.png
+/usr/bin/time ./test im.png
+Shapes: 2197219 Mem: 167MB TV: 115216013
+5.98
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 2208331 Mem: 168MB TV: 115216013
+34.20
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 3464x3464 im.png
+/usr/bin/time ./test im.png
+Shapes: 2460160 Mem: 185MB TV: 128844722
+6.59
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 2471571 Mem: 185MB TV: 128844722
+40.01
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 3606x3606 im.png
+/usr/bin/time ./test im.png
+Shapes: 2734394 Mem: 203MB TV: 143409178
+7.26
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 2745900 Mem: 203MB TV: 143409178
+46.25
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 3742x3742 im.png
+/usr/bin/time ./test im.png
+Shapes: 3013768 Mem: 221MB TV: 158232814
+7.82
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 3025911 Mem: 222MB TV: 158232814
+54.33
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 3873x3873 im.png
+/usr/bin/time ./test im.png
+Shapes: 3286988 Mem: 239MB TV: 172463224
+8.56
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 3299317 Mem: 240MB TV: 172463224
+60.25
+
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 4000x4000 im.png
+/usr/bin/time ./test im.png
+Shapes: 3556063 Mem: 257MB TV: 185919581
+9.09
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 3567594 Mem: 258MB TV: 185919581
+67.24
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 4123x4123 im.png
+/usr/bin/time ./test im.png
+Shapes: 3810614 Mem: 275MB TV: 197986234
+9.60
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 3822474 Mem: 275MB TV: 197986234
+72.54
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 4243x4243 im.png
+/usr/bin/time ./test im.png
+Shapes: 4072484 Mem: 292MB TV: 210316642
+10.29
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 4084114 Mem: 293MB TV: 210316642
+80.00
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 4359x4359 im.png
+/usr/bin/time ./test im.png
+Shapes: 4355172 Mem: 311MB TV: 224327964
+10.85
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 4368416 Mem: 311MB TV: 224327964
+94.30
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 4472x4472 im.png
+/usr/bin/time ./test im.png
+Shapes: 4650540 Mem: 329MB TV: 239133072
+11.56
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 4663889 Mem: 330MB TV: 239133072
+103.40
+
+---
+
+church:
+https://upload.wikimedia.org/wikipedia/commons/5/5e/12-04-06-senftenhuette-by-RalfR-08.jpg
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 1000x1000 im.png
+/usr/bin/time ./test im.png
+Shapes: 444552 Mem: 24MB TV: 34507812
+1.24
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 450247 Mem: 24MB TV: 34507812
+1.12
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 1414x1414 im.png
+/usr/bin/time ./test im.png
+Shapes: 862621 Mem: 48MB TV: 65464234
+2.35
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 869965 Mem: 48MB TV: 65464234
+2.44
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 1732x1732 im.png
+/usr/bin/time ./test im.png
+Shapes: 1297562 Mem: 72MB TV: 97589452
+3.52
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 1307550 Mem: 72MB TV: 97589452
+3.90
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 2000x2000 im.png
+/usr/bin/time ./test im.png
+Shapes: 1742942 Mem: 97MB TV: 130320410
+4.80
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 1754377 Mem: 97MB TV: 130320410
+5.35
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 2236x2236 im.png
+/usr/bin/time ./test im.png
+Shapes: 2191695 Mem: 121MB TV: 162582212
+6.05
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 2204266 Mem: 122MB TV: 162582212
+7.16
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 2449x2449 im.png
+/usr/bin/time ./test im.png
+Shapes: 2621219 Mem: 145MB TV: 193006615
+7.44
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 2634376 Mem: 146MB TV: 193006615
+9.14
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 2646x2646 im.png
+/usr/bin/time ./test im.png
+Shapes: 3060179 Mem: 170MB TV: 223998909
+8.40
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 3074573 Mem: 170MB TV: 223998909
+11.40
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 2828x2828 im.png
+/usr/bin/time ./test im.png
+Shapes: 3492283 Mem: 194MB TV: 255080751
+9.61
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 3507721 Mem: 194MB TV: 255080751
+13.42
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 3000x3000 im.png
+/usr/bin/time ./test im.png
+Shapes: 3926003 Mem: 218MB TV: 285292201
+10.83
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 3941031 Mem: 219MB TV: 285292201
+15.71
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 3162x3162 im.png
+/usr/bin/time ./test im.png
+Shapes: 4358970 Mem: 242MB TV: 316308363
+11.86
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 4375681 Mem: 243MB TV: 316308363
+18.16
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 3317x3317 im.png
+/usr/bin/time ./test im.png
+Shapes: 4769205 Mem: 265MB TV: 345146788
+13.02
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 4785976 Mem: 266MB TV: 345146788
+20.61
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 3464x3464 im.png
+/usr/bin/time ./test im.png
+Shapes: 5169146 Mem: 288MB TV: 373093222
+13.96
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 5185973 Mem: 289MB TV: 373093222
+23.18
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 3606x3606 im.png
+/usr/bin/time ./test im.png
+Shapes: 5576025 Mem: 311MB TV: 401578294
+15.18
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 5593657 Mem: 312MB TV: 401578294
+25.66
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 3742x3742 im.png
+/usr/bin/time ./test im.png
+Shapes: 5992055 Mem: 335MB TV: 430319384
+16.56
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 6011030 Mem: 336MB TV: 430319384
+28.78
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 3873x3873 im.png
+/usr/bin/time ./test im.png
+Shapes: 6403654 Mem: 358MB TV: 459182176
+17.39
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 6422668 Mem: 359MB TV: 459182176
+32.43
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 4000x4000 im.png
+/usr/bin/time ./test im.png
+Shapes: 6784480 Mem: 380MB TV: 485350696
+18.45
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 6802578 Mem: 381MB TV: 485350696
+35.58
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 4123x4123 im.png
+/usr/bin/time ./test im.png
+Shapes: 7145874 Mem: 402MB TV: 509467269
+19.36
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 7164198 Mem: 402MB TV: 509467269
+39.58
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 4243x4243 im.png
+/usr/bin/time ./test im.png
+Shapes: 7512160 Mem: 423MB TV: 533503039
+20.30
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 7530769 Mem: 424MB TV: 533503039
+44.40
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 4359x4359 im.png
+/usr/bin/time ./test im.png
+Shapes: 7884369 Mem: 445MB TV: 557837727
+21.26
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 7904097 Mem: 446MB TV: 557837727
+49.43
+
+convert ~/12-04-06-senftenhuette-by-RalfR-08.jpg -gravity Center -extent 4472x4472 im.png
+/usr/bin/time ./test im.png
+Shapes: 8255624 Mem: 467MB TV: 581589527
+22.17
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 8275323 Mem: 468MB TV: 581589527
+54.31
+
+---
+
+cartoon:
+https://upload.wikimedia.org/wikipedia/commons/6/6c/0-cynefin-ORIGINEEL.jpg
+
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 1000x1000 im.png
+/usr/bin/time ./test im.png
+Shapes: 15954 Mem: 8MB TV: 2574630
+0.30
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 17183 Mem: 8MB TV: 2574630
+1.50
+
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 1414x1414 im.png
+/usr/bin/time ./test im.png
+Shapes: 35933 Mem: 16MB TV: 6022555
+0.55
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 37857 Mem: 16MB TV: 6022555
+5.44
+
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 1732x1732 im.png
+/usr/bin/time ./test im.png
+Shapes: 55689 Mem: 25MB TV: 9719197
+0.84
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 57870 Mem: 25MB TV: 9719197
+31.91
+
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 2000x2000 im.png
+/usr/bin/time ./test im.png
+Shapes: 68488 Mem: 33MB TV: 11556566
+1.02
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 70162 Mem: 33MB TV: 11556566
+75.56
+
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 2236x2236 im.png
+/usr/bin/time ./test im.png
+Shapes: 83880 Mem: 41MB TV: 13307554
+1.23
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 85794 Mem: 41MB TV: 13307554
+127.40
+
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 2449x2449 im.png
+/usr/bin/time ./test im.png
+Shapes: 100484 Mem: 49MB TV: 15693564
+1.42
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 104449 Mem: 49MB TV: 15693564
+189.91
+
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 2646x2646 im.png
+/usr/bin/time ./test im.png
+Shapes: 117543 Mem: 57MB TV: 18160118
+1.67
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 120892 Mem: 58MB TV: 18160118
+302.30
+
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 2828x2828 im.png
+/usr/bin/time ./test im.png
+Shapes: 133215 Mem: 66MB TV: 20209931
+1.87
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 137552 Mem: 66MB TV: 20209931
+405.04
+
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 3000x3000 im.png
+/usr/bin/time ./test im.png
+Shapes: 151707 Mem: 74MB TV: 22768628
+2.10
+/usr/bin/time ./test_oldFLST im.png
+Shapes: 156400 Mem: 74MB TV: 22768628
+532.90
+
+
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 3162x3162 im.png
+/usr/bin/time ./test im.png
+Shapes: 171238 Mem: 82MB TV: 25768602
+2.39
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 3317x3317 im.png
+/usr/bin/time ./test im.png
+Shapes: 197355 Mem: 91MB TV: 29794128
+2.68
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 3464x3464 im.png
+/usr/bin/time ./test im.png
+Shapes: 223594 Mem: 100MB TV: 33672490
+2.87
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 3606x3606 im.png
+/usr/bin/time ./test im.png
+Shapes: 244775 Mem: 108MB TV: 37438144
+3.15
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 3742x3742 im.png
+/usr/bin/time ./test im.png
+Shapes: 267081 Mem: 117MB TV: 41000792
+3.44
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 3873x3873 im.png
+/usr/bin/time ./test im.png
+Shapes: 290234 Mem: 125MB TV: 44597750
+3.67
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 4000x4000 im.png
+/usr/bin/time ./test im.png
+Shapes: 313529 Mem: 134MB TV: 48831527
+3.87
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 4123x4123 im.png
+/usr/bin/time ./test im.png
+Shapes: 340063 Mem: 142MB TV: 53430410
+4.32
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 4243x4243 im.png
+/usr/bin/time ./test im.png
+Shapes: 366332 Mem: 151MB TV: 58499044
+4.64
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 4359x4359 im.png
+/usr/bin/time ./test im.png
+Shapes: 393451 Mem: 159MB TV: 63453719
+4.94
+convert ~/0-cynefin-ORIGINEEL.jpg -gravity Center -extent 4472x4472 im.png
+/usr/bin/time ./test im.png
+Shapes: 421933 Mem: 168MB TV: 69165823
+5.33
