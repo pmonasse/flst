@@ -40,7 +40,7 @@ Libraries:
 [libpng](http://libpng.org/pub/png/libpng.html),
 [lipjpeg](http://ijg.org/),
 [libtiff](http://simplesystems.org/libtiff/),
-Imagine (optional)
+[Imagine++](http://imagine.enpc.fr/~monasse/Imagine++/) (optional)
 
 Build instructions:
 
@@ -49,11 +49,12 @@ Build instructions:
     $ cmake -DCMAKE_BUILD_TYPE=Release ../src
     $ make
 
-It produces library "Shape" and programs "main" (Imagine available) and "test".
+It produces library "Shape" and programs "main" (Imagine++ available) and "test_FLST".
 
 ## Usage ##
 Launch with an image file as argument.
-      Usage: ./test image
+
+      Usage: ./test_FLST image
 
 ### Generating HTML documentation ###
     $ cd src
@@ -66,7 +67,7 @@ Open html/index.html to browse the documentation.
 * flst.cpp         : Main algorithm (library)
 * shape.{h,cpp}    : Shape structure (library)
 * tree.{h,cpp}     : Tree of shapes (library)
-* test.cpp         : Test program showing usage
+* test_FLST.cpp    : Test program showing usage
 * main.cpp         : Graphical exploration of the tree
 
 Additional files:

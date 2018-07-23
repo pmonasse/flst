@@ -11,8 +11,8 @@ if(Boundary)
 endif()
 
 add_subdirectory(libImage)
-add_executable(test test.cpp)
-target_link_libraries(test image Shape)
+add_executable(test_FLST test_FLST.cpp)
+target_link_libraries(test_FLST image Shape)
 
 add_executable(test_oldFLST test_oldFLST.cpp ClassicalFLST/oldFlst.cpp)
 target_link_libraries(test_oldFLST image Shape)
