@@ -24,7 +24,8 @@
 #include "tree.h"
 #include <cassert>
 
-/// Constructor.
+/// \brief Regular constructor.
+/// \details The tree is built from here, calling the method \a flst_td.
 LsTree::LsTree(const unsigned char* gray, int w, int h) {
     nrow = h; ncol = w;
 

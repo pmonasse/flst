@@ -49,7 +49,14 @@ Build instructions:
     $ cmake -DCMAKE_BUILD_TYPE=Release ../src
     $ make
 
-It produces library "Shape" and programs "main" (Imagine++ available) and "test_FLST".
+It produces library *Shape* and programs *main* (Imagine++ available) and *test_FLST*.
+
+An important part of the used memory is due to the storage of contours (level lines). For large images, it may be better not to store them, which can be achieved by disabling the *Boundary* option:
+
+    $ cmake -DBoundary=OFF .
+    $ make
+
+The same effect as the first line can be achieved by modifying the file CMakeCache.txt, either directly or through interactive tools ccmake and cmake-gui.
 
 ## Usage ##
 Launch with an image file as argument.
