@@ -61,7 +61,7 @@ Launch with an image file as argument.
 
 Open html/index.html to browse the documentation.
 
-## List of source files ##
+## List of source files  (folder src/) ##
 
 * flst.cpp         : Main algorithm (library)
 * shape.{h,cpp}    : Shape structure (library)
@@ -73,4 +73,4 @@ Additional files:
 
 * libImage/        : C++ library for opening images in any format
 * test_oldFlst.cpp : Test program for old, classical FLST
-* oldFlst.cpp      : Traditional FLST (just for comparison)
+* oldFlst.{h,cpp}  : Traditional FLST (just for comparison)
