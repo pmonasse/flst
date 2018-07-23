@@ -59,6 +59,10 @@ An important part of the used memory is due to the storage of contours (level li
 The same effect as the first line can be achieved by modifying the file CMakeCache.txt, either directly or through interactive tools ccmake and cmake-gui.
 
 ## Usage ##
+Check everything is fine on toy dataset contained in folder data/:
+
+    $ ./check_FLST
+
 Launch with an image file as argument.
 
       Usage: ./test_FLST image
@@ -74,6 +78,7 @@ Open html/index.html to browse the documentation.
 * flst.cpp         : Main algorithm (library)
 * shape.{h,cpp}    : Shape structure (library)
 * tree.{h,cpp}     : Tree of shapes (library)
+* check_FLST.cpp   : Sanity check program
 * test_FLST.cpp    : Test program showing usage
 * main.cpp         : Graphical exploration of the tree
 

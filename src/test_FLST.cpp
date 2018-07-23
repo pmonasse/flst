@@ -1,6 +1,6 @@
 /**
  * SPDX-License-Identifier: MPL-2.0+
- * @file test.cpp
+ * @file test_FLST.cpp
  * @brief Basic usage example for tree extraction.
  * @author Pascal Monasse <monasse@imagine.enpc.fr>
  *
