@@ -36,7 +36,7 @@ int main(int argc, char* argv[]) {
         std::cerr << "Error loading image " << argv[1] << std::endl;
         return 1;
     }
-    openWindow(im.width(), im.height());
+    openWindow(im.width()+1, im.height()+1);
     display(im);
 
     LsTree tree(im.data(), im.width(), im.height());
@@ -44,14 +44,17 @@ int main(int argc, char* argv[]) {
 
     int x, y;
     while(getMouse(x,y)==1) {
+        if(x>=im.width() || y>= im.height()) continue;
         LsShape* s = tree.smallest_shape(x,y);
         std::cout << s->area << std::endl;
         noRefreshBegin();
+        clearWindow();
         display(im);
 #if BOUNDARY
+        Color col = (s->type==LsShape::INF) ? BLUE: RED;
         std::vector<LsPoint>::iterator it, end=s->contour.end();
         for(it=s->contour.begin(); it!=end; ++it)
-            drawPoint(it->x, it->y, RED);
+            drawPoint(it->x, it->y, col);
 #endif
         noRefreshEnd();
     }
