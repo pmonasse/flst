@@ -53,7 +53,9 @@ LsShape* LsShape::find_child() {
     return pShapeNotRemoved;  
 }
 
-/// Find next sibling, taking into account that some shapes are removed
+/// Find next sibling, taking into account that some shapes are removed.
+/// Beware: the function does not check whether the shape has a parent (in which
+/// case the answer should be the null shape) and can still return a shape.
 LsShape* LsShape::find_sibling() {
     LsShape *pShape1 = 0, *pShape2 = 0;
     // First look at the siblings in the original tree
@@ -62,19 +64,12 @@ LsShape* LsShape::find_sibling() {
             return pShape2;
     if(parent == 0 || ! parent->bIgnore)
         return 0; // Parent in original tree is also parent in true tree: done
-    // Not found: find node in original tree just before the true parent
-    LsShape* pShape = this;
-    do
-        pShape = pShape->parent;
-    while(pShape->parent->bIgnore);
-    // Look at the siblings of this node
-    for(pShape1 = pShape->sibling; pShape1; pShape1 = pShape1->sibling)
-        if((pShape2 = ls_shape_of_subtree(pShape1)) != 0)
-            return pShape2;
-    return 0;
+    return parent->find_sibling();
 }
 
+/// Beware: undefined behavior if the shape is removed (field \c bIgnore).
 LsShape* LsShape::find_prev_sibling() {
+    assert(! bIgnore);
     LsShape* pNext = find_parent();
     if(! pNext)
         return 0;
