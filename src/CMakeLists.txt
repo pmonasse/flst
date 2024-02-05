@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.5)
+project(Boundaries)
 
 add_library(Shape
             flst.cpp
@@ -10,19 +11,22 @@ if(Boundary)
   add_definitions(-DBOUNDARY)
 endif()
 
-add_subdirectory(libImage)
-add_executable(check_FLST check_FLST.cpp)
-target_link_libraries(check_FLST image Shape)
+find_package(PNG)
+find_package(JPEG)
+if(PNG_FOUND AND JPEG_FOUND)
+    add_subdirectory(libImage)
+    add_executable(check_FLST check_FLST.cpp)
+    target_link_libraries(check_FLST image Shape)
 
-add_executable(test_FLST test_FLST.cpp)
-target_link_libraries(test_FLST image Shape)
+    add_executable(test_FLST test_FLST.cpp)
+    target_link_libraries(test_FLST image Shape)
 
-add_executable(test_oldFLST test_oldFLST.cpp ClassicalFLST/oldFlst.cpp)
-target_link_libraries(test_oldFLST image Shape)
+    add_executable(test_oldFLST test_oldFLST.cpp ClassicalFLST/oldFlst.cpp)
+    target_link_libraries(test_oldFLST image Shape)
+endif()                           
 
-find_package(Imagine)
+find_package(Imagine COMPONENTS Images)
 if(Imagine_FOUND)
   add_executable(boundaries main.cpp)
-  ImagineUseModules(boundaries Images)
-  target_link_libraries(boundaries Shape)
+  target_link_libraries(boundaries Shape Imagine::Images)
 endif()
