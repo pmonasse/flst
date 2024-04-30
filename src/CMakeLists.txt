@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 project(Boundaries)
 
 add_library(Shape
+            edgel.h edgel.cpp
             flst.cpp
             shape.h shape.cpp
             tree.h tree.cpp)
