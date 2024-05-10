@@ -6,19 +6,6 @@
  *
  * Copyright (c) 2018 Pascal Monasse
  * All rights reserved.
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the Mozilla Public License as
- * published by the Mozilla Foundation, either version 2.0 of the
- * License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * Mozilla Public License for more details.
- *
- * You should have received a copy of the Mozilla Public License
- * along with this program. If not, see <https://www.mozilla.org/en-US/MPL/2.0/>
  */
 
 #include <Imagine/Images.h>
@@ -27,8 +14,9 @@
 using namespace Imagine;
 
 int main(int argc, char* argv[]) {
-    if(argc!=2) {
-        std::cerr << "Usage: " << argv[0] << " imageFile" << std::endl;
+    if(argc!=2 && argc!=3) {
+        std::cerr << "Usage: " << argv[0] << " imageFile [algo]" << std::endl;
+        std::cerr << "Algo: one of PRE, POST. Default: PRE" << std::endl;
         return 1;
     }
     Image<byte> im;
@@ -36,10 +24,20 @@ int main(int argc, char* argv[]) {
         std::cerr << "Error loading image " << argv[1] << std::endl;
         return 1;
     }
+    LsTree::Algo algo = LsTree::TD_PRE;
+    if(argc>2) {
+        if(argv[2]==std::string("POST"))
+            algo = LsTree::TD_POST;
+        else if(argv[2]!=std::string("PRE")) {
+            std::cerr << "Unknown algo " << argv[2] << std::endl;
+            return 1;
+        }
+    }
+    
     openWindow(im.width()+1, im.height()+1);
     display(im);
 
-    LsTree tree(im.data(), im.width(), im.height());
+    LsTree tree(im.data(), im.width(), im.height(), algo);
     std::cout << "Shapes: " << tree.iNbShapes << std::endl;
 
     int x, y;

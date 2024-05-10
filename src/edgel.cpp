@@ -30,6 +30,10 @@ Edgel::Edgel(short int x, short int y, DirEdgel d)
     pt.y = y;
 }
 
+/// Constructor.
+Edgel::Edgel(LsPoint p, DirEdgel d)
+: pt(p), dir(d) {}
+
 /// Change to inverse edgel
 bool Edgel::inverse(Cimage im) {
     if(! exterior(pt, im))

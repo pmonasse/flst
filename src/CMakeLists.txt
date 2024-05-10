@@ -3,7 +3,7 @@ project(Boundaries)
 
 add_library(Shape
             edgel.h edgel.cpp
-            flst.cpp
+            flst.cpp flst_song.cpp
             shape.h shape.cpp
             tree.h tree.cpp)
 

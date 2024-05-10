@@ -5,6 +5,7 @@
  * @author Pascal Monasse <monasse@imagine.enpc.fr>
  *
  * Copyright (c) 2018 Pascal Monasse
+ * All rights reserved.
  */
 
 #ifndef SHAPE_H

@@ -4,21 +4,8 @@
  * @brief Basic usage example for tree extraction.
  * @author Pascal Monasse <monasse@imagine.enpc.fr>
  *
- * Copyright (c) 2018 Pascal Monasse
+ * Copyright (c) 2018,2024 Pascal Monasse
  * All rights reserved.
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the Mozilla Public License as
- * published by the Mozilla Foundation, either version 2.0 of the
- * License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * Mozilla Public License for more details.
- *
- * You should have received a copy of the Mozilla Public License
- * along with this program. If not, see <https://www.mozilla.org/en-US/MPL/2.0/>
  */
 
 #include "libImage/image_io.hpp"
@@ -27,8 +14,9 @@
 #include <iostream>
 
 int main(int argc, char* argv[]) {
-    if(argc!=2) {
-        std::cerr << "Usage: " << argv[0] << " imageFile" << std::endl;
+    if(argc!=2 && argc!=3) {
+        std::cerr << "Usage: " << argv[0] << " imageFile [algo]" << std::endl;
+        std::cerr << "Algo: one of PRE, POST. Default: PRE" << std::endl;
         return 1;
     }
     Image<unsigned char> im;
@@ -36,8 +24,17 @@ int main(int argc, char* argv[]) {
         std::cerr << "Error loading image " << argv[1] << std::endl;
         return 1;
     }
+    LsTree::Algo algo = LsTree::TD_PRE;
+    if(argc>2) {
+        if(argv[2]==std::string("POST"))
+            algo = LsTree::TD_POST;
+        else if(argv[2]!=std::string("PRE")) {
+            std::cerr << "Unknown algo " << argv[2] << std::endl;
+            return 1;
+        }
+    }
 
-    LsTree tree(im.data(), im.Width(), im.Height());
+    LsTree tree(im.data(), im.Width(), im.Height(), algo);
     std::cout << "Shapes: " << tree.iNbShapes << " "
               << "Mem: " << (tree.iNbShapes*sizeof(LsShape)+tree.nrow*tree.ncol*sizeof(LsShape*))/1024/1024 <<  "MB ";
 

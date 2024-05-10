@@ -118,17 +118,6 @@ static void find_pp_children(Cimage im, LsTree& tree, LsShape& s,
     }
 }
 
-/// Add a new child to shape \a parent.
-/// Fields other than family pointers are initialized later in \c init_shape().
-static LsShape* add_child(LsTree& tree, LsShape& parent) {
-    LsShape* old = parent.child;
-    parent.child = &tree.shapes[tree.iNbShapes++];
-    parent.child->parent = &parent;
-    parent.child->sibling = old;
-    parent.child->child = 0;
-    return parent.child;
-}
-
 /// Extract tree of shapes rooted at \a root.
 /// \param im the input image.
 /// \param tree the output tree, where newly extracted shapes are appended.
@@ -144,16 +133,17 @@ static void create_tree(Cimage im, LsTree& tree, LsShape& root,
 
     std::vector<Edgel>::const_iterator it = children.begin();
     for(; it != children.end(); ++it) {
-        LsShape* child = add_child(tree, root);
+        LsShape* child = tree.add_child(root);
         child->pixels = root.pixels + root.area;
         create_tree(im, tree, *child, *it, root.gray);
         root.area += child->area;
     }
 }
 
-/// Top-down FLST algorithm.
-void LsTree::flst_td(const unsigned char* gray) {
-    cimage image = {nrow, ncol, gray};
+/// Top-down pre-order FLST algorithm. Private pixels are found before children
+/// are built.
+void LsTree::flst_td_pre(const unsigned char* gray) {
+    cimage image = {nrow, ncol, (unsigned char*)gray};
     int area = ncol * nrow;
 
     for(int i = area-1; i >= 0; i--)

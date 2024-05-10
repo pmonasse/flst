@@ -16,7 +16,7 @@
 
 struct cimage {
     int nrow, ncol;
-    const unsigned char* gray;
+    unsigned char* gray;
 };
 typedef cimage* Cimage;
 inline unsigned char gray(Cimage im, LsPoint pt)
@@ -46,6 +46,7 @@ static const DirEdgel SE = 7;
 class Edgel {
 public:
     Edgel(short int x, short int y, DirEdgel d);
+    Edgel(LsPoint p, DirEdgel d=EAST);
 
     bool operator==(const Edgel& e) const
     { return (pt.x == e.pt.x && pt.y == e.pt.y && dir == e.dir); }
@@ -55,12 +56,12 @@ public:
     bool inverse(Cimage im);
     LsPoint origin() const;
     bool exterior(LsPoint& ext, Cimage im) const;
-    bool go_straight(Cimage im);
     void next(Cimage im, LsShape::Type type, int level);
 
     LsPoint pt; ///< Interior pixel coordinates (left of edgel direction)
     DirEdgel dir; ///< Direction of edgel
 private:
+    bool go_straight(Cimage im);
     void turn_left(int connect);
     void turn_right(int connect);
     void finish_turn(Cimage im, int connect);
