@@ -114,8 +114,35 @@ int main() {
         std::cout << "Pixels intermediate shape (=3000): " << tree.shapes[0].child->area << std::endl;
         LsShape *s1=tree.shapes[0].child->child, *s2=s1->sibling;
         std::cout << "Pixels leaf1 (=400): " << s1->area << std::endl;
-        s1 = s1->child;
         std::cout << "Pixels leaf2 (=400): " << s2->area << std::endl;
+    }
+
+    if(! libs::ReadImage(name=FOLDER "check7.png", &im)) {
+        std::cerr << "Error loading image " << name << std::endl;
+        return 1;
+    }
+    {
+        LsTree tree(im.data(), im.Width(), im.Height());
+        std::cout << "* " << name << std::endl;
+        std::cout << "Shapes (=4): " << tree.iNbShapes << std::endl;
+        std::cout << "Pixels child (=2500): " << tree.shapes[0].child->area << std::endl;
+        LsShape *s1=tree.shapes[0].child->child, *s2=s1->child;
+        std::cout << "Pixels grand-child (=2400): " << s1->area << std::endl;
+        std::cout << "Pixels leaf (=2300): " << s2->area << std::endl;
+    }
+
+    if(! libs::ReadImage(name=FOLDER "check8.png", &im)) {
+        std::cerr << "Error loading image " << name << std::endl;
+        return 1;
+    }
+    {
+        LsTree tree(im.data(), im.Width(), im.Height());
+        std::cout << "* " << name << std::endl;
+        std::cout << "Shapes (=4): " << tree.iNbShapes << std::endl;
+        std::cout << "Pixels child (=2500): " << tree.shapes[0].child->area << std::endl;
+        LsShape *s1=tree.shapes[0].child->child, *s2=s1->child;
+        std::cout << "Pixels grand-child (=2400): " << s1->area << std::endl;
+        std::cout << "Pixels leaf (=100): " << s2->area << std::endl;
     }
     return 0;
 }
