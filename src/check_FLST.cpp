@@ -144,5 +144,22 @@ int main() {
         std::cout << "Pixels grand-child (=2400): " << s1->area << std::endl;
         std::cout << "Pixels leaf (=100): " << s2->area << std::endl;
     }
+    
+    if(! libs::ReadImage(name=FOLDER "check9.png", &im)) {
+        std::cerr << "Error loading image " << name << std::endl;
+        return 1;
+    }
+    {
+        LsTree tree(im.data(), im.Width(), im.Height());
+        std::cout << "* " << name << std::endl;
+        std::cout << "Shapes (=8): " << tree.iNbShapes << std::endl;
+        std::cout << "Pixels child (=2500): " << tree.shapes[0].child->area << std::endl;
+        LsShape *s1=tree.shapes[0].child->child, *s2=s1->child;
+        std::cout << "Pixels grand-child (=900): " << s1->area << std::endl;
+        std::cout << "Pixels grand-grand-children (5x100):";
+        for(; s2; s2=s2->sibling)
+            std::cout << ' ' << s2->area;
+        std::cout << std::endl;
+    }
     return 0;
 }
